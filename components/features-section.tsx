@@ -34,12 +34,14 @@ const features = [
     description:
       "Upload crop images for instant AI-powered pest and disease identification with treatment recommendations.",
     gradient: "from-red-500 to-pink-600",
+    link: "/pest-detection",
   },
   {
     icon: TrendingUp,
     title: "Market Price Tracking",
     description: "Real-time market price updates and trends to help you sell your crops at the best possible prices.",
     gradient: "from-yellow-500 to-orange-600",
+    link: "/market-price",
   },
   {
     icon: Mic,

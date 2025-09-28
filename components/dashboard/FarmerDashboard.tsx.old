@@ -1,0 +1,184 @@
+'use client'
+
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { FarmerSidebar } from '@/components/farmer/FarmerSidebar'
+import { ChatPanel } from '../farmer/ChatPanelNew'
+import { SoilHealthModule } from '@/components/farmer/SoilHealthModule'
+import { WeatherModule } from '@/components/farmer/WeatherModule'
+import { PestDetectionModule } from '@/components/farmer/PestDetectionModule'
+import { MarketModuleEnhanced as MarketModule } from '../farmer/MarketModuleEnhanced'
+import { VoiceAssistantModule } from '@/components/farmer/VoiceAssistantModule'
+import { FarmerAnalyticsModule } from '@/components/farmer/FarmerAnalyticsModule'
+import { LanguageToggle } from '@/components/farmer/LanguageToggle'
+
+export function FarmerDashboard() {
+  const [activeSection, setActiveSection] = useState<string>('dashboard')
+  const [isOpen, setIsOpen] = useState(true)
+  const [currentLanguage, setCurrentLanguage] = useState('en')
+
+  return (
+    <div className="flex h-screen bg-gradient-to-br from-[#0D0D0D] via-[#1A1A1A] to-[#0D0D0D]">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#66BB6A] opacity-3 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-[#FFD54F] opacity-3 rounded-full blur-3xl" />
+      </div>
+
+      {/* Farmer Sidebar */}
+      <FarmerSidebar
+        activeSection={activeSection}
+        onSectionChange={setActiveSection}
+        isOpen={isOpen}
+        onToggle={() => setIsOpen(!isOpen)}
+      />
+
+      {/* Main Content Area */}
+      <div className={`
+        flex-1 transition-all duration-300 ease-in-out relative z-10
+        ${!isOpen ? 'ml-20' : 'ml-80'}
+      `}>
+        {/* Module Content */}
+        <div className="h-full">
+          {/* Dashboard Overview */}
+          {activeSection === 'dashboard' && (
+            <div className="h-full overflow-y-auto bg-gradient-to-br from-[#0D0D0D] via-[#1A1A1A] to-[#0D0D0D] p-6">
+              <div className="mb-8">
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-[#66BB6A] to-[#FFD54F] bg-clip-text text-transparent mb-2">
+                  Farm Dashboard
+                </h1>
+                <p className="text-[#B0BEC5]">Welcome back! Here's your farm overview for today.</p>
+              </div>
+              
+              {/* Quick Stats */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="glassmorphism-dark p-6 rounded-2xl border border-white/10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-[#66BB6A]/20 rounded-xl flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#66BB6A] rounded" />
+                    </div>
+                    <div>
+                      <h3 className="text-[#F5F5F5] font-semibold">Crop Health</h3>
+                      <p className="text-[#66BB6A] text-2xl font-bold">92%</p>
+                    </div>
+                  </div>
+                  <p className="text-[#B0BEC5] text-sm">Overall crop condition excellent</p>
+                </div>
+                
+                <div className="glassmorphism-dark p-6 rounded-2xl border border-white/10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-[#FFD54F]/20 rounded-xl flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#FFD54F] rounded" />
+                    </div>
+                    <div>
+                      <h3 className="text-[#F5F5F5] font-semibold">Market Value</h3>
+                      <p className="text-[#FFD54F] text-2xl font-bold">₹2.8L</p>
+                    </div>
+                  </div>
+                  <p className="text-[#B0BEC5] text-sm">Estimated crop value</p>
+                </div>
+                
+                <div className="glassmorphism-dark p-6 rounded-2xl border border-white/10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-[#4DD0E1]/20 rounded-xl flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#4DD0E1] rounded" />
+                    </div>
+                    <div>
+                      <h3 className="text-[#F5F5F5] font-semibold">Weather</h3>
+                      <p className="text-[#4DD0E1] text-2xl font-bold">28°C</p>
+                    </div>
+                  </div>
+                  <p className="text-[#B0BEC5] text-sm">Perfect growing conditions</p>
+                </div>
+                
+                <div className="glassmorphism-dark p-6 rounded-2xl border border-white/10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-[#E53935]/20 rounded-xl flex items-center justify-center">
+                      <div className="w-6 h-6 bg-[#E53935] rounded" />
+                    </div>
+                    <div>
+                      <h3 className="text-[#F5F5F5] font-semibold">Alerts</h3>
+                      <p className="text-[#E53935] text-2xl font-bold">2</p>
+                    </div>
+                  </div>
+                  <p className="text-[#B0BEC5] text-sm">Active notifications</p>
+                </div>
+              </div>
+              
+              {/* Quick Actions */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button 
+                  onClick={() => setActiveSection('chatbot')}
+                  className="glassmorphism-dark p-4 rounded-xl border border-white/10 hover:border-[#66BB6A]/30 transition-all duration-300 text-center"
+                >
+                  <div className="w-12 h-12 bg-[#4DD0E1]/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <div className="w-6 h-6 bg-[#4DD0E1] rounded" />
+                  </div>
+                  <h3 className="text-[#F5F5F5] font-medium">AI Assistant</h3>
+                  <p className="text-[#B0BEC5] text-sm">Get farming advice</p>
+                </button>
+                
+                <button 
+                  onClick={() => setActiveSection('market')}
+                  className="glassmorphism-dark p-4 rounded-xl border border-white/10 hover:border-[#66BB6A]/30 transition-all duration-300 text-center"
+                >
+                  <div className="w-12 h-12 bg-[#FFD54F]/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <div className="w-6 h-6 bg-[#FFD54F] rounded" />
+                  </div>
+                  <h3 className="text-[#F5F5F5] font-medium">Market Prices</h3>
+                  <p className="text-[#B0BEC5] text-sm">Live crop prices</p>
+                </button>
+                
+                <button 
+                  onClick={() => setActiveSection('pest-detection')}
+                  className="glassmorphism-dark p-4 rounded-xl border border-white/10 hover:border-[#66BB6A]/30 transition-all duration-300 text-center"
+                >
+                  <div className="w-12 h-12 bg-[#E53935]/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <div className="w-6 h-6 bg-[#E53935] rounded" />
+                  </div>
+                  <h3 className="text-[#F5F5F5] font-medium">Pest Detection</h3>
+                  <p className="text-[#B0BEC5] text-sm">Identify crop issues</p>
+                </button>
+                
+                <button 
+                  onClick={() => setActiveSection('analytics')}
+                  className="glassmorphism-dark p-4 rounded-xl border border-white/10 hover:border-[#66BB6A]/30 transition-all duration-300 text-center"
+                >
+                  <div className="w-12 h-12 bg-[#66BB6A]/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <div className="w-6 h-6 bg-[#66BB6A] rounded" />
+                  </div>
+                  <h3 className="text-[#F5F5F5] font-medium">Analytics</h3>
+                  <p className="text-[#B0BEC5] text-sm">Farm reports</p>
+                </button>
+              </div>
+            </div>
+          )}
+          
+          {/* Chat Panel */}
+          <ChatPanel 
+            isActive={activeSection === 'chatbot'} 
+            language={currentLanguage}
+          />
+          
+          {/* Soil Health Module */}
+          <SoilHealthModule isActive={activeSection === 'soil-health'} />
+          
+          {/* Weather Module */}
+          <WeatherModule isActive={activeSection === 'weather'} />
+          
+          {/* Pest Detection Module */}
+          <PestDetectionModule isActive={activeSection === 'pest-detection'} />
+          
+          {/* Market Module */}
+          <MarketModule />
+          
+          {/* Analytics Module */}
+          <FarmerAnalyticsModule isActive={activeSection === 'analytics'} />
+          
+          {/* Language Toggle Module */}
+          <LanguageToggle isActive={activeSection === 'language'} />
+        </div>
+      </div>
+    </div>
+  )
+}

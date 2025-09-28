@@ -34,6 +34,18 @@ import {
   RefreshCw
 } from 'lucide-react';
 
+// Type definitions
+interface WeatherAlert {
+  id: string;
+  type: 'warning' | 'advisory' | 'severe';
+  severity: 'low' | 'medium' | 'high' | 'severe';
+  title: string;
+  description: string;
+  timeRange: string;
+  crops: string[];
+  actions: string[];
+}
+
 // Mock Weather Data for UI demonstration
 const MOCK_WEATHER_DATA = {
   location: {
@@ -93,8 +105,8 @@ const MOCK_WEATHER_DATA = {
   alerts: [
     {
       id: "alert-1",
-      type: "warning",
-      severity: "moderate",
+      type: "warning" as const,
+      severity: "medium" as const,
       title: "Heavy Rainfall Expected",
       description: "Moderate to heavy rainfall expected tomorrow. Consider postponing pesticide application and ensure proper field drainage.",
       timeRange: "Tomorrow 6:00 AM - 8:00 PM",
@@ -103,8 +115,8 @@ const MOCK_WEATHER_DATA = {
     },
     {
       id: "alert-2", 
-      type: "advisory",
-      severity: "low",
+      type: "advisory" as const,
+      severity: "low" as const,
       title: "Optimal Sowing Conditions",
       description: "Current weather conditions are favorable for wheat sowing. Soil moisture and temperature are within ideal ranges.",
       timeRange: "Next 3 days",

@@ -40,6 +40,9 @@ export function Header() {
             <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
               About
             </a>
+            <Link href="/dashboard-demo" className="text-muted-foreground hover:text-foreground transition-colors">
+              Dashboards
+            </Link>
             <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </a>
@@ -52,7 +55,9 @@ export function Header() {
                 AI Assistant
               </Button>
             </Link>
-            <Button className="glow-effect bg-primary hover:bg-primary/90">Get Started</Button>
+            <Link href="/auth">
+              <Button className="glow-effect bg-primary hover:bg-primary/90">Sign In</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,6 +81,9 @@ export function Header() {
               <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
                 About
               </a>
+              <Link href="/dashboard-demo" className="text-muted-foreground hover:text-foreground transition-colors">
+                Dashboards
+              </Link>
               <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </a>
@@ -86,7 +94,9 @@ export function Header() {
                     AI Assistant
                   </Button>
                 </Link>
-                <Button className="glow-effect bg-primary hover:bg-primary/90">Get Started</Button>
+                <Link href="/auth">
+                  <Button className="glow-effect bg-primary hover:bg-primary/90">Sign In</Button>
+                </Link>
               </div>
             </nav>
           </div>

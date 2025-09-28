@@ -27,6 +27,20 @@ import {
   Activity
 } from 'lucide-react';
 
+// Type definitions
+interface Alert {
+  id: string;
+  type: 'success' | 'warning' | 'danger' | 'info';
+  title: string;
+  message: string;
+  value?: string;
+  icon: any;
+  color: string;
+  timestamp: Date;
+  priority: 'high' | 'medium' | 'low';
+  dismissed?: boolean;
+}
+
 // Mock Analytics Data for UI demonstration
 const MOCK_ANALYTICS_DATA = {
   overview: {
@@ -90,7 +104,7 @@ const MOCK_ANALYTICS_DATA = {
   alerts: [
     {
       id: 'alert-1',
-      type: 'success',
+      type: 'success' as const,
       title: 'Excellent Yield Performance',
       message: 'Your wheat yield is 20% higher than last season.',
       value: '+20%',
@@ -102,7 +116,7 @@ const MOCK_ANALYTICS_DATA = {
     },
     {
       id: 'alert-2',
-      type: 'warning',
+      type: 'warning' as const,
       title: 'Fertilizer Cost Alert',
       message: 'Fertilizer costs increased by 12% this month.',
       value: '+12%',
@@ -114,7 +128,7 @@ const MOCK_ANALYTICS_DATA = {
     },
     {
       id: 'alert-3',
-      type: 'danger',
+      type: 'danger' as const,
       title: 'Irrigation Efficiency Drop',
       message: 'Water efficiency dropped to 85% — risk of lower yields.',
       value: '-15%',

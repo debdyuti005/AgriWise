@@ -237,8 +237,8 @@ export function ReportDownloadButton({
   };
 
   const estimatedFileSize = () => {
-    const selectedFormat = EXPORT_FORMATS.find(f => f.id === selectedFormat);
-    return selectedFormat?.fileSize || 'Unknown';
+    const selectedFormatInfo = EXPORT_FORMATS.find(f => f.id === selectedFormat);
+    return selectedFormatInfo?.fileSize || 'Unknown';
   };
 
   return (

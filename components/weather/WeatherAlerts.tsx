@@ -17,7 +17,7 @@ import { Badge } from '@/components/ui/badge';
 interface WeatherAlert {
   id: string;
   type: 'warning' | 'advisory' | 'severe';
-  severity: 'low' | 'moderate' | 'high' | 'severe';
+  severity: 'low' | 'medium' | 'high' | 'severe';
   title: string;
   description: string;
   timeRange: string;

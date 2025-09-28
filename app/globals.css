@@ -3,6 +3,82 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* AgriWise Dark Theme Glassmorphism Styles */
+.glassmorphism-dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glassmorphism-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient Text Utilities */
+.gradient-text-primary {
+  background: linear-gradient(135deg, #66BB6A, #FFD54F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-secondary {
+  background: linear-gradient(135deg, #4DD0E1, #66BB6A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(102, 187, 106, 0.3);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(255, 213, 79, 0.3);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(77, 208, 225, 0.3);
+}
+
+/* Animated Background Gradients */
+.animated-gradient {
+  background: linear-gradient(-45deg, #0D0D0D, #1A1A1A, #0D0D0D, #2A2A2A);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulse Glow Animation */
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 20px rgba(102, 187, 106, 0.2);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(102, 187, 106, 0.4);
+  }
+}
+
 :root {
   /* Updated design tokens for dark futuristic theme */
   --background: #0a0a0a;

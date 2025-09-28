@@ -324,3 +324,11 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.glow-effect {
+  transition: all 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.4), 0 0 40px rgba(52, 211, 153, 0.2);
+}

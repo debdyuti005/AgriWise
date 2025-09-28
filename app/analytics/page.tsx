@@ -183,9 +183,11 @@ export default function AnalyticsPage() {
   const [dateRange, setDateRange] = useState('6months');
   const [compareMode, setCompareMode] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(new Date());
+  const [mounted, setMounted] = useState(false);
   const [analyticsData, setAnalyticsData] = useState(MOCK_ANALYTICS_DATA);
 
   useEffect(() => {
+    setMounted(true);
     // Simulate real-time data updates
     const interval = setInterval(() => {
       setLastUpdated(new Date());
@@ -280,7 +282,7 @@ export default function AnalyticsPage() {
 
           {/* Last Updated */}
           <div className="mt-4 text-sm text-gray-500">
-            Last updated: {lastUpdated.toLocaleTimeString()}
+            Last updated: {mounted ? lastUpdated.toLocaleTimeString() : 'Loading...'}
           </div>
         </motion.div>
 

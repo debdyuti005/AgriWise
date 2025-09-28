@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -94,6 +94,11 @@ export function AIInsightsCard({
   const [activeTab, setActiveTab] = useState<'alerts' | 'suggestions'>('alerts');
   const [filteredCategory, setFilteredCategory] = useState<string>('all');
   const [showDismissed, setShowDismissed] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const activeAlerts = alerts.filter(alert => showDismissed || !alert.dismissed);
   const filteredSuggestions = suggestions.filter(suggestion => 
@@ -236,7 +241,7 @@ export function AIInsightsCard({
                         
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-500">
-                            {alert.timestamp.toLocaleString()}
+                            {mounted ? alert.timestamp.toLocaleString() : 'Loading...'}
                           </span>
                           
                           <div className="flex items-center gap-2">

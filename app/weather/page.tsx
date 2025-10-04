@@ -173,10 +173,12 @@ export default function WeatherPage() {
   const [selectedCrop, setSelectedCrop] = useState('wheat');
   const [locationDetecting, setLocationDetecting] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(new Date());
+  const [mounted, setMounted] = useState(false);
   const reportRef = useRef<HTMLDivElement>(null);
 
   // Auto-refresh weather data
   useEffect(() => {
+    setMounted(true);
     const interval = setInterval(() => {
       setLastUpdated(new Date());
       // In real app, this would fetch fresh weather data
@@ -281,7 +283,7 @@ export default function WeatherPage() {
 
           {/* Last Updated */}
           <div className="mt-4 text-sm text-gray-500">
-            Last updated: {lastUpdated.toLocaleTimeString()}
+            Last updated: {mounted ? lastUpdated.toLocaleTimeString() : 'Loading...'}
           </div>
         </motion.div>
 

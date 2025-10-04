@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Download, 
@@ -57,6 +57,11 @@ export function WeatherReportDownload({
   const [isDownloaded, setIsDownloaded] = useState(false);
   const [selectedSections, setSelectedSections] = useState(['overview', 'forecast', 'insights']);
   const [reportFormat, setReportFormat] = useState<'pdf' | 'mobile'>('pdf');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleDownload = async () => {
     setIsGenerating(true);
@@ -220,7 +225,7 @@ export function WeatherReportDownload({
           </div>
           <div className="flex items-center gap-2 text-sm text-gray-400 mt-1">
             <Calendar className="w-4 h-4" />
-            <span>Generated on: {new Date().toLocaleDateString()}</span>
+            <span>Generated on: {mounted ? new Date().toLocaleDateString() : 'Loading...'}</span>
           </div>
         </div>
 

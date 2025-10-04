@@ -7,63 +7,64 @@ A next-generation, role-based crop advisory platform empowering farmers, experts
 
 ## SIH 2025 Portal Idea
 
-**AgriWise: Collaborative Crop Advisory & Market Intelligence Portal**
+### AgriWise: Collaborative Crop Advisory & Market Intelligence Portal
 
-- Farmer-centric, modular dashboards for crop advisory, pest & disease detection, and market price tracking
-- Role-based access for farmers, experts, and government officials
-- Multilingual and voice-enabled interface for accessibility and inclusivity
-- Real-time data, AI-driven insights, and actionable recommendations
-- Secure, collaborative workflows for field-level decision making
+- **Farmer-centric:** Modular dashboards for crop advisory, pest & disease detection, and market price tracking.
+- **Role-based:** Secure access for farmers, agricultural experts, and government officials.
+- **Accessible:** Multilingual and voice-enabled interface for nationwide inclusivity.
+- **Intelligent:** Real-time data, AI-driven insights, and actionable recommendations.
+- **Collaborative:** Secure workflows for seamless field-level decision making and expert consultation.
 
 ## Overview
 
-AgriWise delivers comprehensive, data-driven crop advisory and market intelligence. The platform enables farmers to optimize practices, detect pests/diseases early, and make informed market decisions, all within a secure, collaborative environment.
+AgriWise is an integrated web platform designed to deliver comprehensive, data-driven crop advisory and market intelligence. It empowers farmers to optimize their agricultural practices, detect pests and diseases early, and make profitable market decisions, all within a secure and collaborative digital ecosystem.
 
 ## Key Features
 
-- **Role-Based Dashboards**: Modular dashboards for farmers, experts, and officials
-- **Farmer Sidebar**: Dark-themed, accessible, multilingual, and voice-supported navigation
-- **Pest & Disease Detection Dashboard**: AI-powered detection, history, treatment, and reporting
-- **Market Price Tracking Module**: Real-time price ticker, watchlist, charts, alerts, and recommendations
-- **Accessibility**: Glassmorphism UI, responsive design, screen reader support
-- **Multilingual & Voice Support**: Easy switching and voice interaction for all users
-- **Collaborative Workflows**: Secure data sharing and expert feedback
+- **Role-Based Dashboards**: Tailored, modular dashboards providing relevant tools and data for farmers, experts, and officials.
+- **Farmer Sidebar**: A dark-themed, accessible, and voice-supported navigation hub for a seamless user experience.
+- **Pest & Disease Detection**: An AI-powered module for uploading images, viewing detection history, accessing treatment protocols, and analyzing trends.
+- **Market Price Tracking**: A dynamic module with a real-time price ticker, customizable watchlists, interactive charts, price alerts, and AI-driven market recommendations.
+- **Modern & Accessible UI**: Built with a glassmorphism design, ensuring full responsiveness and screen reader compatibility.
+- **Multilingual & Voice Support**: Intuitive language switching and voice command integration to break down literacy and accessibility barriers.
+- **Collaborative Workflows**: Features enabling secure data sharing between farmers and experts to facilitate timely and effective advisory.
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- npm or pnpm
+- pnpm (or npm/yarn)
 
 ### Installation
 
-1. Clone the repository
-```bash
-git clone <repository-url>
-cd agriwise
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/debdyuti005/AgriWise.git
+   cd AgriWise
+   ```
 
-2. Install dependencies
-```bash
-pnpm install
-```
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
 
-3. Run the development server
-```bash
-pnpm dev
-```
+3. Run the development server:
+   ```bash
+   pnpm dev
+   ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 ## Tech Stack
 
 - **Framework**: Next.js 14
 - **Styling**: Tailwind CSS
-- **UI Components**: Radix UI, Lucide-react, Framer Motion, Recharts
+- **UI Components**: Shadcn/UI, Radix UI, Lucide-react
+- **Animation**: Framer Motion
+- **Charts**: Recharts
 - **Language**: TypeScript
 - **Deployment**: Vercel
 
 ---
 
-For SIH 2025 submission and demo, see the [SIH Idea Description](#sih-2025-portal-idea) above.

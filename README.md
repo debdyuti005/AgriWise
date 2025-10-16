@@ -1,70 +1,168 @@
 # AgriWise
 
-A next-generation, role-based crop advisory platform empowering farmers, experts, and stakeholders with intelligent, collaborative decision support. Built for SIH 2025.
+Smart India Hackathon 2025 · Collaborative Crop Advisory & Market Intelligence Portal
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/debdyuti-mondals-projects/agriwise)
-[![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel)](https://agriwise-sih.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
-## SIH 2025 Portal Idea
+AgriWise is a next-generation, role-based decision support system that empowers farmers, agricultural experts, and policy stakeholders with actionable intelligence. It blends agronomic expertise, AI-powered insights, and real-time market intelligence into a cohesive experience built for India’s diverse farming communities.
 
-### AgriWise: Collaborative Crop Advisory & Market Intelligence Portal
+---
 
-- **Farmer-centric:** Modular dashboards for crop advisory, pest & disease detection, and market price tracking.
-- **Role-based:** Secure access for farmers, agricultural experts, and government officials.
-- **Accessible:** Multilingual and voice-enabled interface for nationwide inclusivity.
-- **Intelligent:** Real-time data, AI-driven insights, and actionable recommendations.
-- **Collaborative:** Secure workflows for seamless field-level decision making and expert consultation.
+## 🎯 Problem Statement
 
-## Overview
+Indian agriculture faces persistent structural challenges:
 
-AgriWise is an integrated web platform designed to deliver comprehensive, data-driven crop advisory and market intelligence. It empowers farmers to optimize their agricultural practices, detect pests and diseases early, and make profitable market decisions, all within a secure and collaborative digital ecosystem.
+- **Information asymmetry** leading to suboptimal crop planning and input usage.
+- **Delayed pest & disease detection** causing crop loss and excessive pesticide use.
+- **Volatile market prices** preventing farmers from realizing fair value.
+- **Digital and linguistic divide** that limits adoption of existing digital tools.
 
-## Key Features
+## 🌱 Our Solution
 
-- **Role-Based Dashboards**: Tailored, modular dashboards providing relevant tools and data for farmers, experts, and officials.
-- **Farmer Sidebar**: A dark-themed, accessible, and voice-supported navigation hub for a seamless user experience.
-- **Pest & Disease Detection**: An AI-powered module for uploading images, viewing detection history, accessing treatment protocols, and analyzing trends.
-- **Market Price Tracking**: A dynamic module with a real-time price ticker, customizable watchlists, interactive charts, price alerts, and AI-driven market recommendations.
-- **Modern & Accessible UI**: Built with a glassmorphism design, ensuring full responsiveness and screen reader compatibility.
-- **Multilingual & Voice Support**: Intuitive language switching and voice command integration to break down literacy and accessibility barriers.
-- **Collaborative Workflows**: Features enabling secure data sharing between farmers and experts to facilitate timely and effective advisory.
+AgriWise offers modular dashboards tailored to each stakeholder, delivering:
 
-## Getting Started
+- Personalized crop, soil, and risk advisories.
+- AI-assisted pest and disease detection with expert validation loops.
+- Real-time market intelligence with configurable alerts and forecasting.
+- Inclusive, multilingual, and voice-enabled interfaces for frictionless adoption.
+
+---
+
+## 🧭 System Architecture
+
+```mermaid
+graph TD
+    Farmer((Farmer App)) -->|Soil, Crop, Image Data| FarmerDashboard
+    FarmerDashboard --> AdvisoryEngine
+    FarmerDashboard --> PestModule
+    FarmerDashboard --> MarketModule
+    AdvisoryEngine -->|Context-aware insights| FarmerDashboard
+    PestModule --> VisionAI
+    VisionAI --> KnowledgeBase
+    MarketModule --> MarketDataAPI
+    Expert((Agri Expert)) --> ExpertWorkspace
+    ExpertWorkspace --> AdvisoryEngine
+    Government((Agri Dept.)) --> PolicyDashboard
+    PolicyDashboard --> MarketModule
+    Notifications((Voice & SMS Gateway)) --> FarmerDashboard
+    Notifications --> ExpertWorkspace
+```
+
+### Platform Layers
+
+- **Experience Layer**: Farmer dashboard, expert workspace, and policy dashboard with responsive UI and accessibility enhancements.
+- **Intelligence Layer**: AI/ML models for pest detection, recommendation engines, and rule-based advisory flows.
+- **Data Layer**: Soil datasets, weather feeds, satellite imagery, and market price APIs.
+- **Integration Layer**: Secure APIs, webhooks, and messaging for alerts and collaborative workflows.
+
+## 🔄 End-to-End Data Flow
+
+```mermaid
+sequenceDiagram
+    participant Farmer as Farmer
+    participant App as AgriWise App
+    participant AI as AI Services
+    participant Expert as Expert Portal
+    participant Market as Market APIs
+
+    Farmer->>App: Submit soil details & pest images
+    App->>AI: Analyze soil and detect pests
+    AI-->>App: Insights, risk flags, treatment options
+    App-->>Farmer: Personalized advisory dashboard
+    App->>Expert: Escalate complex cases for review
+    Expert-->>App: Validated recommendations & follow-up plan
+    Market->>App: Real-time commodity prices
+    App-->>Farmer: Alerts, forecasts, and selling guidance
+```
+
+## 🧩 Feature Suite
+
+| Persona | Experience Highlights | Value Delivered |
+| --- | --- | --- |
+| **Farmers** | Voice-enabled navigation, localized language support, AI pest detection, market alerts | Reduced crop risk and higher profitability |
+| **Experts** | Collaborative case management, treatment libraries, dynamic reporting | Faster advisory turnaround and knowledge sharing |
+| **Government/Policy** | Macro dashboards, regional heatmaps, alert systems | Data-driven policy actions and targeted interventions |
+
+---
+
+## 📸 Visual Walkthrough
+
+![AgriWise Farmer Dashboard](public/placeholder.jpg)
+*Figure: Farmer cockpit combining crop health, weather, and market intelligence.*
+
+![AgriWise Market Module](public/placeholder.svg)
+*Figure: Real-time price tracking with AI-powered recommendations.*
+
+Replace the placeholders above with actual screenshots before submission.
+
+---
+
+## 🛠️ Technology Stack
+
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **UI/UX**: Tailwind CSS, Shadcn/UI, Lucide Icons, Framer Motion
+- **Data & Analytics**: Recharts, custom hooks, modular state management
+- **AI Integrations**: Image classification pipeline, rule-based advisory engine (extensible)
+- **Infrastructure**: Deployed on Vercel with edge-ready optimizations
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- pnpm (or npm/yarn)
+- pnpm (recommended) or npm/yarn
 
-### Installation
+### Installation & Development
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/debdyuti005/AgriWise.git
    cd AgriWise
    ```
 
 2. Install dependencies:
+
    ```bash
    pnpm install
    ```
 
-3. Run the development server:
+3. Run the local development server:
+
    ```bash
    pnpm dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+4. Visit the app at:
 
-## Tech Stack
+   ```text
+   http://localhost:3000
+   ```
 
-- **Framework**: Next.js 14
-- **Styling**: Tailwind CSS
-- **UI Components**: Shadcn/UI, Radix UI, Lucide-react
-- **Animation**: Framer Motion
-- **Charts**: Recharts
-- **Language**: TypeScript
-- **Deployment**: Vercel
+### Production Deployment
+
+The project is continuously deployed on Vercel: [https://agriwise-sih.vercel.app/](https://agriwise-sih.vercel.app/)
 
 ---
+
+## 📅 Roadmap Highlights
+
+- [ ] Integrate satellite-derived vegetation indices (NDVI) for early stress detection.
+- [ ] Add offline-first progressive web app (PWA) support for low-connectivity regions.
+- [ ] Expand language coverage to 12+ Indian languages with regional voice packs.
+- [ ] Integrate market linkage APIs for direct procurement channels.
+- [ ] Release mobile companion app for Android devices.
+
+---
+
+## 👤 Maintainer
+
+- **Debdyuti Mondal** — [GitHub](https://github.com/debdyuti005)
+
+## 📄 License
+
+This project is released under the MIT License. See [LICENSE](LICENSE) for full terms.
 

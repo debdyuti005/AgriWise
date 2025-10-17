@@ -92,13 +92,7 @@ sequenceDiagram
 
 ## 📸 Visual Walkthrough
 
-![AgriWise Farmer Dashboard](public/placeholder.jpg)
-*Figure: Farmer cockpit combining crop health, weather, and market intelligence.*
-
-![AgriWise Market Module](public/placeholder.svg)
-*Figure: Real-time price tracking with AI-powered recommendations.*
-
-Replace the placeholders above with actual screenshots before submission.
+![AgriWise Farmer Dashboard](public/placeholder.png)
 
 ---
 

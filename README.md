@@ -93,7 +93,7 @@ sequenceDiagram
 ## 📸 Visual Walkthrough
 
 <div align="center">
-  <img src="public/placeholder.jpg" alt="AgriWise Hero Section" width="800">
+  <img src="public/placeholder.png" alt="AgriWise Hero Section" width="800">
   <p><em><b>Figure 1:</b> The AgriWise landing page, highlighting AI-driven insights.</em></p>
 </div>
 <br>

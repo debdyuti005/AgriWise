@@ -1,6 +1,6 @@
 # 🌾 AgriWise - Crop Advisory Platform
 
-<<<<<<< HEAD
+
 Smart India Hackathon 2025 
 Collaborative Crop Advisory & Market Intelligence Portal
 

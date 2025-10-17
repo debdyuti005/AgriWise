@@ -92,7 +92,25 @@ sequenceDiagram
 
 ## 📸 Visual Walkthrough
 
-![AgriWise Farmer Dashboard](public/placeholder.png)
+<div align="center">
+  <img src="public/placeholder.jpg" alt="AgriWise Hero Section" width="800">
+  <p><em><b>Figure 1:</b> The AgriWise landing page, highlighting AI-driven insights.</em></p>
+</div>
+<br>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="public/features.png" alt="AgriWise Features" width="400">
+      <br>
+      <em><b>Figure 2:</b> A glimpse into the powerful features offered.</em>
+    </td>
+    <td align="center">
+      <img src="public/userbased.png" alt="User-Based Access" width="400">
+      <br>
+      <em><b>Figure 3:</b> Tailored experiences for different user roles.</em>
+    </td>
+  </tr>
+</table>
 
 ---
 

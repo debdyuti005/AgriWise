@@ -1,7 +1,8 @@
 # 🌾 AgriWise - Crop Advisory Platform
 
 <<<<<<< HEAD
-Smart India Hackathon 2025 · Collaborative Crop Advisory & Market Intelligence Portal
+Smart India Hackathon 2025 
+Collaborative Crop Advisory & Market Intelligence Portal
 
 [![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel)](https://agriwise-sih.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)

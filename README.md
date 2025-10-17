@@ -146,7 +146,8 @@ Replace the placeholders above with actual screenshots before submission.
 
 ### Production Deployment
 
-The project is continuously deployed on Vercel: [https://agriwise-sih.vercel.app/](https://agriwise-sih.vercel.app/)
+The project is continuously deployed on Vercel: [https://agri-wise-six.vercel.app/](https://agri-wise-six.vercel.app/)
+
 
 ---
 
